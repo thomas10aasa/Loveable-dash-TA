@@ -24,10 +24,10 @@ export function AppShell({ children }: { children: ReactNode }) {
       </div>
 
       {/* Top bar */}
-      <header className="sticky top-0 z-30 border-b border-white/10 backdrop-blur-xl" style={{ background: "#001653" }}>
+      <header className="sticky top-0 z-30 border-b border-white/10 backdrop-blur-xl" style={{ background: "#001d6c" }}>
         <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-6 py-4 lg:px-10">
           <Link to="/" className="group flex items-center gap-4">
-            <img src={logoUrl} alt="Trustidex" className="h-7 w-auto" />
+            <img src={logoUrl} alt="Trustidex" className="h-9 w-auto" />
             <span className="hidden items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-white/70 no-underline md:inline-flex">
               RESYS · RECOMMENDATION PROBABILITY SYSTEM
               <img src={earlyAccessUrl} alt="Early Access" className="h-5 w-auto" />
