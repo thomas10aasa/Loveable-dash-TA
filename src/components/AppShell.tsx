@@ -2,6 +2,8 @@ import { Link, useLocation } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { ORG } from "@/lib/data";
 import { ArrowUpRight } from "lucide-react";
+import logoUrl from "@/assets/trustidex-logo.svg";
+import earlyAccessUrl from "@/assets/early-access-wing.png";
 
 const NAV: { to: string; label: string; exact?: boolean }[] = [
   { to: "/", label: "War Room", exact: true },
@@ -14,20 +16,25 @@ export function AppShell({ children }: { children: ReactNode }) {
   const loc = useLocation();
   return (
     <div className="min-h-screen bg-canvas text-ink">
+      {/* Top announcement bar */}
+      <div className="w-full text-center text-[11px] font-medium uppercase tracking-[0.18em] text-white" style={{ background: "#2563eb" }}>
+        <div className="mx-auto max-w-[1400px] px-6 py-2 lg:px-10">
+          Early access · AI visibility intelligence for revenue teams
+        </div>
+      </div>
+
       {/* Top bar */}
-      <header className="sticky top-0 z-30 border-b border-border/60 bg-canvas/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 border-b border-white/10 backdrop-blur-xl" style={{ background: "#001653" }}>
         <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-6 py-4 lg:px-10">
-          <Link to="/" className="group flex items-baseline gap-3">
-            <span className="font-display text-2xl font-semibold tracking-tight">
-              {ORG.brand}
-              <span className="text-risk">.</span>
-            </span>
-            <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted md:inline">
-              {ORG.product} · {ORG.pilot}
+          <Link to="/" className="group flex items-center gap-4">
+            <img src={logoUrl} alt="Trustidex" className="h-7 w-auto brightness-0 invert" />
+            <span className="hidden items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-white/70 md:inline-flex">
+              RESYS · RECOMMENDATION PROBABILITY SYSTEM
+              <img src={earlyAccessUrl} alt="Early Access" className="h-5 w-auto" />
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 rounded-full border border-border/70 bg-card/60 p-1 md:flex">
+          <nav className="hidden items-center gap-1 rounded-full border border-white/15 bg-white/5 p-1 md:flex">
             {NAV.map((n) => {
               const active = n.exact ? loc.pathname === n.to : loc.pathname.startsWith(n.to);
               return (
@@ -37,9 +44,10 @@ export function AppShell({ children }: { children: ReactNode }) {
                   className={[
                     "rounded-full px-4 py-1.5 text-sm font-medium transition-all",
                     active
-                      ? "bg-ink text-primary-foreground shadow-luxe"
-                      : "text-ink-soft hover:text-ink",
+                      ? "text-white shadow-luxe"
+                      : "text-white/70 hover:text-white",
                   ].join(" ")}
+                  style={active ? { background: "#03216d" } : undefined}
                 >
                   {n.label}
                 </Link>
@@ -49,13 +57,13 @@ export function AppShell({ children }: { children: ReactNode }) {
 
           <div className="flex items-center gap-3">
             <div className="hidden text-right md:block">
-              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
+              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/60">
                 Last check
               </div>
-              <div className="text-xs font-medium text-ink-soft">{ORG.lastCheck}</div>
+              <div className="text-xs font-medium text-white/85">{ORG.lastCheck}</div>
             </div>
-            <div className="flex h-9 items-center gap-2 rounded-full border border-border bg-card px-3 text-xs font-medium">
-              <span className="size-2 rounded-full bg-opportunity" />
+            <div className="flex h-9 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 text-xs font-medium text-white">
+              <span className="size-2 rounded-full" style={{ background: "#e8a020" }} />
               {ORG.account}
             </div>
           </div>
@@ -72,9 +80,10 @@ export function AppShell({ children }: { children: ReactNode }) {
                 className={[
                   "shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium",
                   active
-                    ? "border-ink bg-ink text-primary-foreground"
-                    : "border-border bg-card text-ink-soft",
+                    ? "border-white/20 text-white"
+                    : "border-white/10 text-white/70",
                 ].join(" ")}
+                style={active ? { background: "#03216d" } : undefined}
               >
                 {n.label}
               </Link>

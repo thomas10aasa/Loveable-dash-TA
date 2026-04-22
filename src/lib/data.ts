@@ -4,7 +4,7 @@
 export const ORG = {
   brand: "Trustidex",
   product: "ReSys",
-  pilot: "Recommendation Probability System — Pilot",
+  pilot: "Recommendation Probability System",
   account: "info@trusidex.ai",
   lastCheck: "21 Apr 2026",
   version: "v0.17",

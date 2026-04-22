@@ -4,9 +4,38 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
-  --font-display: "Fraunces", "Times New Roman", serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "General Sans", "Inter", system-ui, sans-serif;
+  --font-sans: "General Sans", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-sm: 6px;
@@ -52,8 +81,8 @@
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
 
-  --shadow-luxe: 0 1px 2px oklch(0.2 0.04 260 / 0.04), 0 8px 32px oklch(0.2 0.04 260 / 0.06);
-  --shadow-deep: 0 2px 8px oklch(0.2 0.04 260 / 0.06), 0 24px 64px oklch(0.2 0.04 260 / 0.10);
+  --shadow-luxe: 0 1px 2px oklch(0.2 0.04 260 / 0.03), 0 4px 18px oklch(0.2 0.04 260 / 0.04);
+  --shadow-deep: 0 2px 6px oklch(0.2 0.04 260 / 0.04), 0 16px 40px oklch(0.2 0.04 260 / 0.07);
   --shadow-glow-risk: 0 0 0 1px oklch(0.62 0.18 30 / 0.18), 0 8px 32px oklch(0.62 0.18 30 / 0.18);
   --shadow-glow-opp: 0 0 0 1px oklch(0.62 0.13 160 / 0.20), 0 8px 32px oklch(0.62 0.13 160 / 0.18);
 }
@@ -61,48 +90,48 @@
 :root {
   --radius: 16px;
 
-  /* Ivory canvas, deep navy ink — soft luxury */
-  --canvas: oklch(0.985 0.008 85);            /* warm ivory */
-  --background: oklch(0.985 0.008 85);
-  --foreground: oklch(0.22 0.04 260);          /* deep navy ink */
-  --ink: oklch(0.18 0.04 260);
-  --ink-soft: oklch(0.38 0.03 260);
-  --ink-muted: oklch(0.55 0.02 260);
+  /* White canvas, Trustidex navy ink */
+  --canvas: #ffffff;
+  --background: #ffffff;
+  --foreground: #001653;
+  --ink: #001653;
+  --ink-soft: #334a7a;
+  --ink-muted: #6b7794;
 
-  --card: oklch(1 0 0);
+  --card: #ffffff;
   --card-foreground: var(--ink);
-  --popover: oklch(1 0 0);
+  --popover: #ffffff;
   --popover-foreground: var(--ink);
 
-  --primary: oklch(0.22 0.04 260);             /* deep navy */
-  --primary-foreground: oklch(0.985 0.008 85);
-  --secondary: oklch(0.96 0.01 85);
+  --primary: #03216d;
+  --primary-foreground: #ffffff;
+  --secondary: #f8f9fb;
   --secondary-foreground: var(--ink);
-  --muted: oklch(0.95 0.008 85);
-  --muted-foreground: oklch(0.5 0.02 260);
-  --accent: oklch(0.93 0.02 85);
+  --muted: #f3f5f9;
+  --muted-foreground: #6b7794;
+  --accent: #eef1f7;
   --accent-foreground: var(--ink);
-  --destructive: oklch(0.62 0.18 30);
-  --destructive-foreground: oklch(1 0 0);
+  --destructive: #e53935;
+  --destructive-foreground: #ffffff;
 
-  --border: oklch(0.92 0.01 85);
-  --input: oklch(0.92 0.01 85);
-  --ring: oklch(0.62 0.18 30);
+  --border: #e6e9f0;
+  --input: #e6e9f0;
+  --ring: #2563eb;
 
-  /* Signal colors */
-  --risk: oklch(0.62 0.18 30);                 /* burnt coral */
-  --risk-soft: oklch(0.95 0.04 30);
-  --opportunity: oklch(0.55 0.13 160);         /* sage */
-  --opportunity-soft: oklch(0.94 0.04 160);
-  --signal: oklch(0.55 0.15 250);              /* azure */
-  --signal-soft: oklch(0.95 0.03 250);
-  --gold: oklch(0.78 0.13 80);
+  /* Signal colors — locked to brand */
+  --risk: #e53935;
+  --risk-soft: #fdecec;
+  --opportunity: #1f9d6b;
+  --opportunity-soft: #e6f6ee;
+  --signal: #2563eb;
+  --signal-soft: #e8efff;
+  --gold: #e8a020;
 
-  --chart-1: oklch(0.62 0.18 30);
-  --chart-2: oklch(0.55 0.13 160);
-  --chart-3: oklch(0.55 0.15 250);
-  --chart-4: oklch(0.78 0.13 80);
-  --chart-5: oklch(0.45 0.08 290);
+  --chart-1: #e53935;
+  --chart-2: #1f9d6b;
+  --chart-3: #2563eb;
+  --chart-4: #e8a020;
+  --chart-5: #03216d;
 }
 
 .dark {
@@ -176,21 +205,21 @@
 
   .gradient-hero {
     background:
-      radial-gradient(80% 60% at 10% 0%, oklch(0.95 0.04 30 / 0.5), transparent 60%),
-      radial-gradient(60% 60% at 100% 30%, oklch(0.94 0.04 160 / 0.45), transparent 60%),
-      radial-gradient(70% 50% at 50% 100%, oklch(0.95 0.03 250 / 0.35), transparent 60%),
-      oklch(1 0 0);
+      radial-gradient(80% 60% at 10% 0%, rgba(37, 99, 235, 0.08), transparent 60%),
+      radial-gradient(60% 60% at 100% 30%, rgba(232, 160, 32, 0.10), transparent 60%),
+      radial-gradient(70% 50% at 50% 100%, rgba(3, 33, 109, 0.06), transparent 60%),
+      #ffffff;
   }
 
   .gradient-ink {
-    background: linear-gradient(135deg, oklch(0.18 0.04 260) 0%, oklch(0.28 0.05 260) 100%);
+    background: linear-gradient(135deg, #001653 0%, #03216d 100%);
   }
 
   .gradient-risk {
-    background: linear-gradient(135deg, oklch(0.62 0.18 30) 0%, oklch(0.55 0.16 15) 100%);
+    background: linear-gradient(135deg, #e53935 0%, #c62828 100%);
   }
   .gradient-opp {
-    background: linear-gradient(135deg, oklch(0.55 0.13 160) 0%, oklch(0.5 0.13 180) 100%);
+    background: linear-gradient(135deg, #1f9d6b 0%, #0e7c54 100%);
   }
 
   .ring-divider {
