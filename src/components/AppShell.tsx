@@ -2,12 +2,12 @@ import { Link, Outlet, useLocation } from "@tanstack/react-router";
 import { ORG } from "@/lib/data";
 import { ArrowUpRight } from "lucide-react";
 
-const NAV = [
+const NAV: { to: string; label: string; exact?: boolean }[] = [
   { to: "/", label: "War Room", exact: true },
   { to: "/competitors", label: "Competitors" },
   { to: "/opportunities", label: "Opportunities" },
   { to: "/roadmap", label: "Roadmap" },
-] as const;
+];
 
 export function AppShell() {
   const loc = useLocation();
