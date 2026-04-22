@@ -1,26 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AppShell } from "@/components/AppShell";
+import { Pulse } from "@/components/Pulse";
+import { ActionTriage } from "@/components/ActionTriage";
+import { CompetitorMap } from "@/components/CompetitorMap";
+import { ModelRadar } from "@/components/ModelRadar";
+import { LostRevenue } from "@/components/LostRevenue";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: WarRoom,
+  head: () => ({
+    meta: [
+      { title: "War Room — Trustidex AI" },
+      {
+        name: "description",
+        content:
+          "Real-time AI visibility command center. See what revenue you're losing to competitors and exactly how to win it back.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function WarRoom() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <AppShell>
+      <Pulse />
+      <ActionTriage />
+      <ModelRadar />
+      <CompetitorMap />
+      <LostRevenue />
+    </AppShell>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
