@@ -62,16 +62,16 @@ export function Pulse() {
                   <AreaChart data={SCORE_TREND} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
                     <defs>
                       <linearGradient id="pulseGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="oklch(0.62 0.18 30)" stopOpacity={0.4} />
-                        <stop offset="100%" stopColor="oklch(0.62 0.18 30)" stopOpacity={0} />
+                        <stop offset="0%" stopColor="#e8a020" stopOpacity={0.4} />
+                        <stop offset="100%" stopColor="#e8a020" stopOpacity={0} />
                       </linearGradient>
                     </defs>
                     <YAxis hide domain={[0, 100]} />
                     <Tooltip
-                      cursor={{ stroke: "oklch(0.62 0.18 30 / 0.4)" }}
+                      cursor={{ stroke: "rgba(232,160,32,0.4)" }}
                       contentStyle={{
-                        background: "oklch(1 0 0)",
-                        border: "1px solid oklch(0.92 0.01 85)",
+                        background: "#ffffff",
+                        border: "1px solid #e6e9f0",
                         borderRadius: 10,
                         fontSize: 12,
                         boxShadow: "var(--shadow-luxe)",
@@ -81,7 +81,7 @@ export function Pulse() {
                     <Area
                       type="monotone"
                       dataKey="score"
-                      stroke="oklch(0.62 0.18 30)"
+                      stroke="#e8a020"
                       strokeWidth={2}
                       fill="url(#pulseGrad)"
                     />
