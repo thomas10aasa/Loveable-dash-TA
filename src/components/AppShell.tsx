@@ -1,4 +1,5 @@
-import { Link, Outlet, useLocation } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 import { ORG } from "@/lib/data";
 import { ArrowUpRight } from "lucide-react";
 
@@ -9,7 +10,7 @@ const NAV: { to: string; label: string; exact?: boolean }[] = [
   { to: "/roadmap", label: "Roadmap" },
 ];
 
-export function AppShell() {
+export function AppShell({ children }: { children: ReactNode }) {
   const loc = useLocation();
   return (
     <div className="min-h-screen bg-canvas text-ink">
@@ -83,7 +84,7 @@ export function AppShell() {
       </header>
 
       <main className="mx-auto max-w-[1400px] px-6 pb-24 pt-8 lg:px-10">
-        <Outlet />
+        {children}
       </main>
 
       <footer className="border-t border-border/60 bg-canvas">
