@@ -6,14 +6,13 @@ import { ArrowUpRight, TrendingUp } from "lucide-react";
 export function Pulse() {
   const delta = SCORE.current - SCORE.previous;
   return (
-    <section className="grain relative overflow-hidden rounded-[28px] border border-border bg-card shadow-luxe gradient-hero">
+    <section className="relative overflow-hidden rounded-[28px] bg-white shadow-luxe" style={{ background: "linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%)" }}>
       <div className="grid gap-10 p-8 md:p-12 lg:grid-cols-[1.1fr_1fr]">
         {/* Left — score */}
         <div className="flex flex-col justify-between gap-8">
           <div>
             <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
-              <span className="size-1.5 rounded-full bg-risk animate-pulse" />
-              Live · AI visibility pulse
+              AI recommendation pulse
             </div>
             <h1 className="mt-5 max-w-xl font-display text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.05] tracking-tight text-balance">
               You're losing{" "}
