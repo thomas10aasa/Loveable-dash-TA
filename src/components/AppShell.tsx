@@ -2,7 +2,7 @@ import { Link, useLocation } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { ORG } from "@/lib/data";
 import { ArrowUpRight } from "lucide-react";
-import logoUrl from "@/assets/trustidex-logo.svg";
+import logoUrl from "@/assets/trustidex-logo.png";
 import earlyAccessUrl from "@/assets/early-access-wing.png";
 
 const NAV: { to: string; label: string; exact?: boolean }[] = [
@@ -28,7 +28,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-6 py-4 lg:px-10">
           <Link to="/" className="group flex items-center gap-4">
             <img src={logoUrl} alt="Trustidex" className="h-7 w-auto brightness-0 invert" />
-            <span className="hidden items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-white/70 md:inline-flex">
+            <span className="hidden items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-white/70 no-underline md:inline-flex">
               RESYS · RECOMMENDATION PROBABILITY SYSTEM
               <img src={earlyAccessUrl} alt="Early Access" className="h-5 w-auto" />
             </span>
@@ -47,7 +47,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                       ? "text-white shadow-luxe"
                       : "text-white/70 hover:text-white",
                   ].join(" ")}
-                  style={active ? { background: "#03216d" } : undefined}
+                  style={active ? { background: "#e8a020" } : undefined}
                 >
                   {n.label}
                 </Link>
@@ -80,10 +80,10 @@ export function AppShell({ children }: { children: ReactNode }) {
                 className={[
                   "shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium",
                   active
-                    ? "border-white/20 text-white"
+                    ? "border-transparent text-white"
                     : "border-white/10 text-white/70",
                 ].join(" ")}
-                style={active ? { background: "#03216d" } : undefined}
+                style={active ? { background: "#e8a020" } : undefined}
               >
                 {n.label}
               </Link>
