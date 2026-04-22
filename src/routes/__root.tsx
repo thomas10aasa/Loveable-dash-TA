@@ -44,6 +44,12 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Trustidex AI · War Room" },
+      { name: "description", content: "Revenue Vision Hub is a visual dashboard for revenue operations, highlighting actionable insights and growth opportunities." },
+      { property: "og:description", content: "Revenue Vision Hub is a visual dashboard for revenue operations, highlighting actionable insights and growth opportunities." },
+      { name: "twitter:description", content: "Revenue Vision Hub is a visual dashboard for revenue operations, highlighting actionable insights and growth opportunities." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/061e568a-40f3-4bf6-9833-f773576ccfc0/id-preview-0c8105b1--d01c0d70-8484-4ae5-a5ac-1f6ee5aae693.lovable.app-1776872955054.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/061e568a-40f3-4bf6-9833-f773576ccfc0/id-preview-0c8105b1--d01c0d70-8484-4ae5-a5ac-1f6ee5aae693.lovable.app-1776872955054.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
